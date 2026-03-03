@@ -1261,8 +1261,8 @@ Transform:
   m_GameObject: {fileID: 2714634266389146593}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000074505806, y: 0.00000013411045, z: 0.19988303, w: 0.9798198}
-  m_LocalPosition: {x: -1.6571355, y: -0.4668157, z: -0.12400091}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.318, y: -0.326, z: 0.145}
+  m_LocalScale: {x: 0.6323, y: 0.6323, z: 0.6323}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6202721024995297321}
@@ -3242,7 +3242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6202721024995297321}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Seagrass Clump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3256,8 +3256,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4947339727517224637}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.48375544, y: 0.51573324, z: 0.5157331, w: 0.4837554}
-  m_LocalPosition: {x: 9.44, y: -4.14, z: -12.09}
+  m_LocalRotation: {x: -0.4449083, y: 0.54959655, z: 0.54960597, w: 0.44489726}
+  m_LocalPosition: {x: 9.598919, y: -4.1400156, z: -11.983196}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3284,7 +3284,7 @@ Transform:
   - {fileID: 4794641879322107482}
   - {fileID: 4621657261498706170}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 102.021}
 --- !u!1 &5297644838751641480
 GameObject:
   m_ObjectHideFlags: 0
