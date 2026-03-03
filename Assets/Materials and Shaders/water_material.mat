@@ -49,8 +49,8 @@ Material:
     m_Colors:
     - _deep_color: {r: 0.01568626, g: 0.18957658, b: 0.47058824, a: 0}
     - _shadow_color: {r: 0.7075472, g: 0.99048936, b: 1, a: 0}
-    - _shallow_color: {r: 0.38878602, g: 0.61190325, b: 0.6150943, a: 0}
-    - _specular_color: {r: 0.18273407, g: 0.3184329, b: 0.3283019, a: 0.27450982}
+    - _shallow_color: {r: 0.40773934, g: 0.70794076, b: 0.7132075, a: 0}
+    - _specular_color: {r: 0.2920541, g: 0.44326186, b: 0.4566037, a: 0.27450982}
   m_BuildTextureStacks: []
 --- !u!114 &5844749266348674371
 MonoBehaviour:
