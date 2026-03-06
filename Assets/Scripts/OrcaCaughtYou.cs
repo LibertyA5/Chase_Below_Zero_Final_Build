@@ -7,13 +7,16 @@ public class OrcaCaughtYou : MonoBehaviour
     [Header("Lose Screen UI")]
     public GameObject loseScreen;
 
+    [Header("Detection")]
+    public LayerMask whatIsOrca;
+
     private bool isDead = false;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (isDead) return;
 
-        if (collision.gameObject.CompareTag("Orca"))
+        if ((whatIsOrca.value & (1 << collision.gameObject.layer)) != 0)
         {
             Die();
         }
@@ -26,6 +29,9 @@ public class OrcaCaughtYou : MonoBehaviour
 
         if (loseScreen != null)
             loseScreen.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         SealMovement movement = GetComponent<SealMovement>();
         if (movement != null)
