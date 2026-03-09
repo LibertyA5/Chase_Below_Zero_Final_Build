@@ -7,6 +7,7 @@ public class SealBreath : MonoBehaviour
     [Header("Breath Settings")]
     public float maxBreath = 10f;
     public float drainRate = 1f;
+    public float sprintDrainRate = 1f;
     public float refillRate = 3f;
 
     [Header("Detection Layers")]
@@ -25,18 +26,26 @@ public class SealBreath : MonoBehaviour
     int waterContacts = 0;
     int airHoleContacts = 0;
 
+    SealMovement movement;
+
     void Start()
     {
         currentBreath = maxBreath;
+        movement = GetComponent<SealMovement>();
         Debug.Log("Breath system initialized. Breath = " + currentBreath);
     }
 
     void Update()
     {
         if (isDead) return;
+
+        float totalDrain = drainRate;
+
+        if (movement != null && movement.isSprinting)
+            totalDrain += sprintDrainRate;
         if (inWater && !inAirHole)
         {
-            currentBreath -= drainRate * Time.deltaTime;
+            currentBreath -= totalDrain * Time.deltaTime;
 
             Debug.Log($"Breath DRAINING | Breath: {currentBreath:F2} | WaterContacts: {waterContacts} | AirHoleContacts: {airHoleContacts}");
         }
@@ -52,7 +61,6 @@ public class SealBreath : MonoBehaviour
         if (currentBreath <= 0f)
             Die();
     }
-
     void Die()
     {
         isDead = true;
@@ -100,7 +108,6 @@ public class SealBreath : MonoBehaviour
                 waterContacts = 0;
                 inWater = false;
             }
-
             Debug.Log("Exited WATER | Contacts: " + waterContacts);
         }
         if (((1 << other.gameObject.layer) & whatIsAirHole) != 0)
@@ -112,7 +119,6 @@ public class SealBreath : MonoBehaviour
                 airHoleContacts = 0;
                 inAirHole = false;
             }
-
             Debug.Log("Exited AIR HOLE | Contacts: " + airHoleContacts);
         }
     }

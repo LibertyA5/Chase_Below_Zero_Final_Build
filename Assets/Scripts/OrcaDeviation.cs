@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,7 +16,7 @@ public class OrcaDeviation : MonoBehaviour
     NavMeshAgent agent;
     Orca patrol;
 
-    bool chasing;
+    public bool chasing;
     bool searching;
     float searchTimer;
 
