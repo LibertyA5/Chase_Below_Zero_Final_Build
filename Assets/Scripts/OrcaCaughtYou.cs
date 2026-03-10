@@ -25,7 +25,6 @@ public class OrcaCaughtYou : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        Debug.Log("The Orca got you!");
 
         if (loseScreen != null)
             loseScreen.SetActive(true);
