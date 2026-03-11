@@ -28,7 +28,7 @@ public class SealMovement : MonoBehaviour
     public LayerMask whatIsWater;
     public LayerMask whatIsKelp;
     public LayerMask whatIsAirHole;
-    public float groundCheckDistance = 0.6f; // adjust to seal height
+    public float groundCheckDistance = 0.6f;
     public Transform orientation;
 
     [Header("Input")]
@@ -39,12 +39,12 @@ public class SealMovement : MonoBehaviour
     Rigidbody rb;
     bool readyToJump = true;
     bool isGrounded;
-    bool isInWater;
+    public bool isInWater;
     public bool IsHidden;
     int waterContacts = 0;
 
-    float horizontalInput;
-    float verticalInput;
+    public float horizontalInput;
+    public float verticalInput;
     Vector3 moveDirection;
 
     public bool isSprinting;
@@ -65,7 +65,9 @@ public class SealMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        bool sprintKey = Input.GetKey(KeyCode.LeftShift);
+        bool sprintKey =
+            Input.GetKey(KeyCode.LeftShift) ||
+            Input.GetKey(KeyCode.JoystickButton8);
 
         if (sprintKey && currentStamina > 0f)
             isSprinting = true;
@@ -89,20 +91,20 @@ public class SealMovement : MonoBehaviour
                 currentStamina = maxStamina;
         }
 
-        jumpHeld = Input.GetKey(jumpKey) || Input.GetButton("Jump");
+        jumpHeld = Input.GetKey(jumpKey) || Input.GetKey(KeyCode.JoystickButton0);
 
         float height = GetComponent<Collider>().bounds.extents.y;
 
         isGrounded = Physics.Raycast(
-            transform.position,
+            transform.position + Vector3.up * 0.1f,
             Vector3.down,
-            height + 0.1f,
+            groundCheckDistance,
             whatIsGround);
 
         rb.drag = isInWater ? waterDrag : airDrag;
         rb.useGravity = true;
 
-        if (jumpHeld && readyToJump && isGrounded && !isInWater)
+        if (jumpHeld && readyToJump && (isGrounded || isInWater))
         {
             Jump();
         }
@@ -130,9 +132,9 @@ public class SealMovement : MonoBehaviour
 
             float upwardInput = 0f;
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.JoystickButton0))
                 upwardInput = 1f;
-            else if (Input.GetKey(KeyCode.LeftControl))
+            else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.JoystickButton1))
                 upwardInput = -1f;
 
             moveDirection =

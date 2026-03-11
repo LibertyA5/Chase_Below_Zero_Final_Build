@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class OrcaCaughtYou : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class OrcaCaughtYou : MonoBehaviour
     public LayerMask whatIsOrca;
 
     private bool isDead = false;
+    public GameObject restartButton;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,10 +26,15 @@ public class OrcaCaughtYou : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return;
         isDead = true;
 
         if (loseScreen != null)
+        {
             loseScreen.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(restartButton);
+        }
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

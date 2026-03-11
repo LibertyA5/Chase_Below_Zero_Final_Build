@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SealBreath : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class SealBreath : MonoBehaviour
     int airHoleContacts = 0;
 
     SealMovement movement;
+
+    public GameObject restartButton;
 
     void Start()
     {
@@ -69,6 +72,7 @@ public class SealBreath : MonoBehaviour
 
         if (loseScreen != null)
             loseScreen.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(restartButton);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

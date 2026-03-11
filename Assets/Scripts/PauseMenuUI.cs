@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuUI : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject resumeButton;
 
     bool isPaused = false;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
             if (isPaused)
                 ResumeGame();
@@ -21,6 +23,8 @@ public class PauseMenuUI : MonoBehaviour
     void PauseGame()
     {
         pauseMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(resumeButton);
         Time.timeScale = 0f;
 
         Cursor.visible = true;

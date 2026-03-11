@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class FoundFamily : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FoundFamily : MonoBehaviour
     public LayerMask whatIsFamily;
 
     private bool foundFam = false;
+    public GameObject restartButton;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -29,6 +31,7 @@ public class FoundFamily : MonoBehaviour
 
         if (winScreen != null)
             winScreen.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(restartButton);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

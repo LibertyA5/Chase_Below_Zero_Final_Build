@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 5891023025121623876}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &673391450
@@ -3428,6 +3428,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 389146906297143150, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.4641509
+      objectReference: {fileID: 0}
+    - target: {fileID: 389146906297143150, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.4641509
+      objectReference: {fileID: 0}
+    - target: {fileID: 389146906297143150, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.4641509
+      objectReference: {fileID: 0}
+    - target: {fileID: 389146906297143150, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5891023025121623875}
@@ -3528,6 +3540,18 @@ PrefabInstance:
       value: WinScreen
       objectReference: {fileID: 0}
     - target: {fileID: 3201451927292332717, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201451927292332717, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201451927292332717, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.4339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201451927292332717, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 5891023025121623875}
@@ -3568,6 +3592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1d5eed7e48c014c9043c25cc340eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &5891023025121623876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6883791521553923834, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+  m_PrefabInstance: {fileID: 5891023025121623873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
