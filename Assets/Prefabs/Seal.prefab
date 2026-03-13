@@ -270,8 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 3884117916258400916}
   sound1: {fileID: 8300000, guid: bbd5f317d9104e74e82d8321a8f2d7e7, type: 3}
-  sound2: {fileID: 8300000, guid: 2264e1e16ab3d124d84eb3d16cba4525, type: 3}
-  idleSound: {fileID: 8300000, guid: 0755577c341bdf4469f0b65420b843d0, type: 3}
+  sound2: {fileID: 8300000, guid: 4dd11b32802d7384caae388eb25a5992, type: 3}
+  idleSound: {fileID: 8300000, guid: 4692892b535a106478249b62efbb9135, type: 3}
   swimSound: {fileID: 8300000, guid: bd792deca96fd7e4292324c16f6572fa, type: 3}
   minTimeBetweenSounds: 5
   maxTimeBetweenSounds: 15

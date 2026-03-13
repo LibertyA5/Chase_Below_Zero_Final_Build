@@ -6,21 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prefabs/MainMenu.unity
+    path: Assets/Scenes/Main Scenes/MainMenu.unity
     guid: ad613dd477d80b44cb421fc823d53b6a
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/SampleScene.unity
+    guid: 94fe74087134f944eac97aa1664b08a8
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/LOSESCREEN.unity
+    guid: c6fc49c0375e61540957b79c46f633a2
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Paused.unity
+    guid: 63b00be302f114f4692ff7dcda796577
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/Settings.unity
+    guid: d0b370a11e59a6d4c8f7dec056369746
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/WINSCREEN.unity
+    guid: 6fb8a3b1239941847a0f6d956ebee9a4
   - enabled: 1
     path: Assets/Scenes/ArtScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Prefabs/LOSESCREEN.unity
-    guid: c6fc49c0375e61540957b79c46f633a2
-  - enabled: 1
-    path: Assets/Prefabs/Paused.unity
-    guid: 63b00be302f114f4692ff7dcda796577
-  - enabled: 1
-    path: Assets/Prefabs/Settings.unity
-    guid: d0b370a11e59a6d4c8f7dec056369746
-  - enabled: 1
-    path: Assets/Prefabs/WINSCREEN.unity
-    guid: 6fb8a3b1239941847a0f6d956ebee9a4
   m_configObjects: {}

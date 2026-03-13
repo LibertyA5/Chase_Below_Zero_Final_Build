@@ -15,7 +15,6 @@ public class OrcaDeviation : MonoBehaviour
     [Header("Orca Sounds")]
     public AudioSource audioSource;
     public AudioClip patrolSound;
-    public AudioClip spotSound;
     public AudioClip chaseStartSound;
     public AudioClip chasingLoopSound;
 
@@ -35,6 +34,7 @@ public class OrcaDeviation : MonoBehaviour
 
         PlayPatrolSound();
     }
+
     void Update()
     {
         if (chasing)
@@ -85,7 +85,7 @@ public class OrcaDeviation : MonoBehaviour
         patrol.enabled = false;
         agent.enabled = false;
 
-        StartCoroutine(PlaySpotThenChase());
+        StartCoroutine(PlayChaseStartThenLoop());
     }
     void StopChase()
     {
@@ -93,15 +93,10 @@ public class OrcaDeviation : MonoBehaviour
         searching = true;
         searchTimer = lingerTime;
     }
-    IEnumerator PlaySpotThenChase()
+    IEnumerator PlayChaseStartThenLoop()
     {
         audioSource.loop = false;
         audioSource.pitch = Random.Range(0.95f, 1.05f);
-
-        audioSource.clip = spotSound;
-        audioSource.Play();
-
-        yield return new WaitForSeconds(spotSound.length);
 
         audioSource.clip = chaseStartSound;
         audioSource.Play();
