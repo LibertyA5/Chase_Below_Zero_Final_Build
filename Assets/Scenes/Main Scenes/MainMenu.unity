@@ -773,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083446607528011003, guid: bf194c8b2f1a3f045bc6f9f86c9b44ad, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -632
+      value: -646
       objectReference: {fileID: 0}
     - target: {fileID: 4083446607528011003, guid: bf194c8b2f1a3f045bc6f9f86c9b44ad, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 128
+      value: 916
       objectReference: {fileID: 0}
     - target: {fileID: 4083446607528011003, guid: bf194c8b2f1a3f045bc6f9f86c9b44ad, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -891,6 +891,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8619103130781255181, guid: bf194c8b2f1a3f045bc6f9f86c9b44ad, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95fde0e4913add742a7af3ec8c07bf3c, type: 3}
     - target: {fileID: 8667170670287903437, guid: bf194c8b2f1a3f045bc6f9f86c9b44ad, type: 3}
       propertyPath: m_Color.b
       value: 0.24567464
