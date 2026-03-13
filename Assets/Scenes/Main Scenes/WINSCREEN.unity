@@ -304,34 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boost: 3.5
-  positionLerpTime: 0.2
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.01
-  invertY: 0
 --- !u!1 &673391447
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +611,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.49929094
+      objectReference: {fileID: 0}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1141002346147103429}
@@ -738,9 +722,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2619407269023739068, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -340
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733946340663503928, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24567464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733946340663503928, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.24567464
+      objectReference: {fileID: 0}
+    - target: {fileID: 2733946340663503928, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2528302
+      objectReference: {fileID: 0}
     - target: {fileID: 2805993854979590587, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241287932613329687, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24567464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241287932613329687, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.24567464
+      objectReference: {fileID: 0}
+    - target: {fileID: 3241287932613329687, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.2528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677084734858757127, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -156
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.49929094
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
