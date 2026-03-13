@@ -7,44 +7,40 @@ public class CameraMovement : MonoBehaviour
     public float mouseSensitivity = 250f;
     public float controllerSensitivity = 120f;
 
-    public Transform orientation;
+public Transform orientation;
 
     float xRotation;
     float yRotation;
 
     float controllerDeadzone = 0.1f;
 
-    private void Start()
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
-    private void Update()
+    void Update()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X");
-        float mouseY = Input.GetAxisRaw("Mouse Y");
+        Debug.Log("deltaTime: " + Time.deltaTime);
+        float mouseX = Input.GetAxisRaw("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
 
-        float controllerX = Input.GetAxis("ControllerLookX");
-        float controllerY = Input.GetAxis("ControllerLookY");
+        float controllerX = Input.GetAxis("ControllerLookX") * controllerSensitivity * Time.deltaTime;
+        float controllerY = Input.GetAxis("ControllerLookY") * controllerSensitivity * Time.deltaTime;
 
         if (Mathf.Abs(controllerX) < controllerDeadzone) controllerX = 0;
         if (Mathf.Abs(controllerY) < controllerDeadzone) controllerY = 0;
 
-        float lookX =
-            mouseX * mouseSensitivity * Time.deltaTime +
-            controllerX * controllerSensitivity * Time.deltaTime;
-
-        float lookY =
-            mouseY * mouseSensitivity * Time.deltaTime +
-            controllerY * controllerSensitivity * Time.deltaTime;
+        float lookX = mouseX + controllerX;
+        float lookY = mouseY + controllerY;
 
         yRotation += lookX;
         xRotation -= lookY;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        orientation.rotation = Quaternion.Euler(0f, yRotation, 0f);
     }
+
 }
