@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Orca : MonoBehaviour
 {
-    [SerializeField] float waitTimeOnWayPoint = 1f;
+    [SerializeField] float waitTimeOnWayPoint = 0.5f;
     [SerializeField] Path path;
 
     NavMeshAgent agent;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Path : MonoBehaviour
 {
+    [SerializeField] private int StartIndex;
     public enum PathType
     {
         Loop,
@@ -13,7 +14,7 @@ public class Path : MonoBehaviour
     public PathType pathType = PathType.Loop;
 
     private int direction = 1;
-    int index;
+    int index; // sets the starting point
 
     public Vector3 GetCurrentWayPoint()
     {
