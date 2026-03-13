@@ -19,19 +19,24 @@ public class Seal_Sounds : MonoBehaviour
     public float maxTimeBetweenSounds = 15f;
 
     private SealMovement sealMovement;
-    private Rigidbody rb;
+
+    private bool playingRandomSound = false;
 
     void Start()
     {
         sealMovement = GetComponent<SealMovement>();
-        rb = GetComponent<Rigidbody>();
-
         StartCoroutine(PlayRandomSealSound());
     }
-
     void Update()
     {
         HandleMovementSounds();
+
+        // Stop bark instantly if entering water
+        if (sealMovement.isInWater && playingRandomSound)
+        {
+            audioSource.Stop();
+            playingRandomSound = false;
+        }
     }
     void HandleMovementSounds()
     {
@@ -42,6 +47,7 @@ public class Seal_Sounds : MonoBehaviour
         {
             if (audioSource.clip != swimSound)
             {
+                audioSource.Stop();
                 audioSource.clip = swimSound;
                 audioSource.loop = true;
                 audioSource.Play();
@@ -51,15 +57,15 @@ public class Seal_Sounds : MonoBehaviour
         {
             if (audioSource.clip != idleSound)
             {
+                audioSource.Stop();
                 audioSource.clip = idleSound;
                 audioSource.loop = true;
                 audioSource.Play();
             }
         }
-        else if (!sealMovement.isInWater)
+        else if (!sealMovement.isInWater && audioSource.loop)
         {
-            if (audioSource.loop)
-                audioSource.Stop();
+            audioSource.Stop();
         }
     }
     IEnumerator PlayRandomSealSound()
@@ -69,8 +75,20 @@ public class Seal_Sounds : MonoBehaviour
             float waitTime = Random.Range(minTimeBetweenSounds, maxTimeBetweenSounds);
             yield return new WaitForSeconds(waitTime);
 
+            if (sealMovement.isInWater)
+                continue;
+
             AudioClip chosenSound = Random.value > 0.5f ? sound1 : sound2;
-            audioSource.PlayOneShot(chosenSound);
+
+            playingRandomSound = true;
+
+            audioSource.clip = chosenSound;
+            audioSource.loop = false;
+            audioSource.Play();
+
+            yield return new WaitUntil(() => !audioSource.isPlaying);
+
+            playingRandomSound = false;
         }
     }
 }

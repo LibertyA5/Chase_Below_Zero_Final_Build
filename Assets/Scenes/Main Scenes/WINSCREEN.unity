@@ -3427,6 +3427,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1141002346147103429}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinandLoseUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 19550128225137048, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 481800109403880006, guid: 5166345099ffcc844851062d8277b08b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3511,11 +3527,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2805993854979590587, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1141002346147103429}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WinandLoseUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075791951876121477, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1287019396036183977, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1141002346147103429}
   m_SourcePrefab: {fileID: 100100000, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+--- !u!1 &1141002346147103428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1287019396036183977, guid: 5166345099ffcc844851062d8277b08b, type: 3}
+  m_PrefabInstance: {fileID: 1141002346147103427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1141002346147103429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141002346147103428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d5eed7e48c014c9043c25cc340eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

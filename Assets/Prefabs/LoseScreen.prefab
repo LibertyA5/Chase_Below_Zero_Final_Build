@@ -389,13 +389,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102900000, guid: ad613dd477d80b44cb421fc823d53b6a, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 6114772348679749380}
+        m_TargetAssemblyTypeName: WinandLoseUI, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -522,13 +522,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 102900000, guid: cac0ed4a45af9d34b85195010a17a5a8, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 6114772348679749380}
+        m_TargetAssemblyTypeName: WinandLoseUI, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 2457930605333531347}
   - component: {fileID: 7874412565781929204}
   - component: {fileID: 6235205453441736578}
+  - component: {fileID: 6114772348679749380}
   m_Layer: 5
   m_Name: LoseScreen
   m_TagString: Untagged
@@ -715,6 +716,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6114772348679749380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7981633049134579820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1d5eed7e48c014c9043c25cc340eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8174914684745416702
 GameObject:
   m_ObjectHideFlags: 0

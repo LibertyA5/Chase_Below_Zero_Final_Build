@@ -9,17 +9,19 @@ public class MainMenuUI : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
     public void OpenSettings()
     {
         SceneManager.LoadScene("Settings");
     }
+
     public void OpenCredits()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Artists");
     }
+
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit Game");
     }
 }

@@ -7,10 +7,10 @@ public class WinandLoseUI : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("SampleScene");
     }
 
-    public void LoadMainMenu()
+    public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }

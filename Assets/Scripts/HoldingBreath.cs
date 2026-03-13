@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class SealBreath : MonoBehaviour
+public class HoldingBreath : MonoBehaviour
 {
     [Header("Breath Settings")]
     public Slider breathSlider;
@@ -17,9 +17,6 @@ public class SealBreath : MonoBehaviour
     public LayerMask whatIsWater;
     public LayerMask whatIsAirHole;
 
-    [Header("Lose Screen UI")]
-    public GameObject loseScreen;
-
     float currentBreath;
 
     bool inWater = false;
@@ -31,8 +28,6 @@ public class SealBreath : MonoBehaviour
 
     SealMovement movement;
 
-    public GameObject restartButton;
-
     void Start()
     {
         currentBreath = maxBreath;
@@ -41,7 +36,6 @@ public class SealBreath : MonoBehaviour
         breathSlider.maxValue = maxBreath;
         breathSlider.value = currentBreath;
     }
-
     void Update()
     {
         if (isDead) return;
@@ -50,14 +44,11 @@ public class SealBreath : MonoBehaviour
 
         if (movement != null && movement.isSprinting)
             totalDrain += sprintDrainRate;
+
         if (inWater && !inAirHole)
-        {
             currentBreath -= totalDrain * Time.deltaTime;
-        }
         else
-        {
             currentBreath += refillRate * Time.deltaTime;
-        }
 
         currentBreath = Mathf.Clamp(currentBreath, 0f, maxBreath);
 
@@ -68,27 +59,20 @@ public class SealBreath : MonoBehaviour
     }
     void Die()
     {
+        if (isDead) return;
         isDead = true;
-
-        if (loseScreen != null)
-            loseScreen.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(restartButton);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        SealMovement movement = GetComponent<SealMovement>();
-        if (movement != null)
-            movement.enabled = false;
+        SceneManager.LoadScene("LOSESCREEN");
     }
     void OnTriggerEnter(Collider other)
     {
-
         if (((1 << other.gameObject.layer) & whatIsWater) != 0)
         {
             waterContacts++;
             inWater = true;
-
         }
         if (((1 << other.gameObject.layer) & whatIsAirHole) != 0)
         {
@@ -98,7 +82,6 @@ public class SealBreath : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-
         if (((1 << other.gameObject.layer) & whatIsWater) != 0)
         {
             waterContacts--;

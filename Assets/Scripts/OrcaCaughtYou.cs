@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class OrcaCaughtYou : MonoBehaviour
 {
-    [Header("Lose Screen UI")]
-    public GameObject loseScreen;
-
     [Header("Detection")]
     public LayerMask whatIsOrca;
 
     private bool isDead = false;
-    public GameObject restartButton;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -29,18 +25,9 @@ public class OrcaCaughtYou : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        if (loseScreen != null)
-        {
-            loseScreen.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(restartButton);
-        }
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        SealMovement movement = GetComponent<SealMovement>();
-        if (movement != null)
-            movement.enabled = false;
+        SceneManager.LoadScene("LOSESCREEN");
     }
 }

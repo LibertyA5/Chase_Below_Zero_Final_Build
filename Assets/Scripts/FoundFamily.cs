@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class FoundFamily : MonoBehaviour
 {
-    [Header("Win Screen UI")]
-    public GameObject winScreen;
-
     [Header("Detection")]
     public LayerMask whatIsFamily;
 
     private bool foundFam = false;
-    public GameObject restartButton;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -23,21 +19,13 @@ public class FoundFamily : MonoBehaviour
             Found();
         }
     }
-
     private void Found()
     {
         foundFam = true;
-        Debug.Log("You made it back to your family!");
-
-        if (winScreen != null)
-            winScreen.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(restartButton);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        SealMovement movement = GetComponent<SealMovement>();
-        if (movement != null)
-            movement.enabled = false;
+        SceneManager.LoadScene("WINSCREEN");
     }
 }

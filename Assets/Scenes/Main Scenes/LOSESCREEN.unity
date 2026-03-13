@@ -287,7 +287,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196444511}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &196444513
 Camera:
   m_ObjectHideFlags: 0
@@ -935,23 +935,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 899830786}
   m_LocalEulerAnglesHint: {x: 0, y: -163.367, z: 0}
---- !u!1 &445223084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7981633049134579820, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-  m_PrefabInstance: {fileID: 5700455985287613380}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &445223085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445223084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1d5eed7e48c014c9043c25cc340eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &550232225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,6 +3399,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 55968398056550041, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5280521249874937958, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3496,49 +3483,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5852297431240225527, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 445223085}
-    - target: {fileID: 5852297431240225527, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 5852297431240225527, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WinandLoseUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5852297431240225527, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6223558345724749586, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 445223085}
-    - target: {fileID: 6223558345724749586, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 6223558345724749586, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: WinandLoseUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6223558345724749586, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 6520936649614816428, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7981633049134579820, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: LoseScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7981633049134579820, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 445223085}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c74324b7cc8eabe42af701b498928ef0, type: 3}
 --- !u!1 &5700455985287613381 stripped
 GameObject:
