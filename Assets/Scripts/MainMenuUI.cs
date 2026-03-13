@@ -12,6 +12,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OpenSettings()
     {
+        SceneTracker.previousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Settings");
     }
 

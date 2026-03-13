@@ -1,46 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class PauseMenuUI : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public GameObject resumeButton;
-
-    bool isPaused = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
-            if (isPaused)
-                ResumeGame();
-            else
+            Scene pauseScene = SceneManager.GetSceneByName("Paused");
+
+            if (!pauseScene.isLoaded)
                 PauseGame();
+            else
+                ResumeGame();
         }
     }
     void PauseGame()
     {
-        pauseMenu.SetActive(true);
+        SceneManager.LoadScene("Paused", LoadSceneMode.Additive);
 
-        EventSystem.current.SetSelectedGameObject(resumeButton);
         Time.timeScale = 0f;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
-        isPaused = true;
     }
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
+        Scene pauseScene = SceneManager.GetSceneByName("Paused");
+
+        if (pauseScene.isLoaded)
+        {
+            SceneManager.UnloadSceneAsync("Paused");
+        }
+
         Time.timeScale = 1f;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-        isPaused = false;
     }
     public void RestartGame()
     {
@@ -50,6 +48,7 @@ public class PauseMenuUI : MonoBehaviour
     public void OpenSettings()
     {
         Time.timeScale = 1f;
+        SceneTracker.previousScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene("Settings");
     }
     public void MainMenu()
